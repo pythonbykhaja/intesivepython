@@ -7,6 +7,7 @@ while index <= 100:
     sum_of_numbers = sum_of_numbers + index
     # Caclulating the square og the number and adding it to the index
     sum_of_squares = sum_of_squares + (index ** 2)
+    index = index + 1
 
 
 result = (sum_of_numbers ** 2) - sum_of_squares
