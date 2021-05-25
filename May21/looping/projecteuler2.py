@@ -10,7 +10,7 @@ while True:
     if third_number >= max_number:
         break
     if third_number%2 == 0:
-        sum_of_even_numbers = sum_of_even_numbers + third_number
+        sum_of_even_numbers += third_number
     first_number = second_number
     second_number = third_number
 
