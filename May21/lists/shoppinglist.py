@@ -1,13 +1,11 @@
 items = []
-items_count = []
-price_per_item = []
 while True:
     item = input('Enter the item to be purchased: ')
     count = int(input('Enter the number of items to be purchased: '))
     price = float(input('Enter the price per unit: '))
-    items.append(item)
-    items_count.append(count)
-    price_per_item.append(price)
+    item_price = count * price
+    current_item_list = [item, count, price, item_price ]
+    items.append(current_item_list)
     choice = input('Do you want to continue press y to continue and n to exit ')
     if choice == 'n':
         break
@@ -17,11 +15,11 @@ print()
 print()
 print("item \t count \t unitprice \t total price")
 bill_amount = 0
-for index in range(len(items)):
-    item = items[index]
-    count = items_count[index]
-    price = price_per_item[index]
-    total_price = count * price
+for current_item in items:
+    item = current_item[0]
+    count = current_item[1]
+    price = current_item[2]
+    total_price = current_item[3]
     print(f"{item} \t {count} \t {price} \t \t {total_price}")
     bill_amount += total_price
 
