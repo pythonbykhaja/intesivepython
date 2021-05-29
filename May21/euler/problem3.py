@@ -6,7 +6,9 @@ number = int(input('Enter the number to calculate largest prime factor: '))
 
 index = number // 2
 while index >= 2:
+    print(f'trying for index {index}')
     if number % index == 0:
+        print(f'trying for factor {index}')
         # index is a factor
         # we need to check if index is prime
         prime_index = 2
