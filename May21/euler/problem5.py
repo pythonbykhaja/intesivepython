@@ -1,4 +1,4 @@
-max_number = 4
+max_number = 20
 maximum_multiple = 1
 for index in range(1, max_number+1):
     maximum_multiple *= index
