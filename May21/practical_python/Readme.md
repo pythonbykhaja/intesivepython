@@ -10,7 +10,7 @@
 * To guess the random number between 0 and 100 use the following code
 ```python
 import random
-number = random.randomint(0,100)
+number = random.randint(0,100)
 ```
 
 ## Problem 2: Pig Latin
