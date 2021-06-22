@@ -1,5 +1,6 @@
 class Message:
     def __init__(self, message):
+        # instance attribute
         self.message = message
 
     def __eq__(self, other):
@@ -10,7 +11,6 @@ class Message:
 
     def __repr__(self):
         return f"message => {self.message}"
-
 
 hello= Message('Hello')
 hai = Message('Hai')
