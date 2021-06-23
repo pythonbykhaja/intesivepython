@@ -25,6 +25,7 @@ class Engineer(Person):
     def __repr__(self) -> str:
         return f"{super().__repr__()} Engineer(category= {self.category})"
 
+
 khaja = Person(name='khaja')
 print(str(khaja))
 print(repr(khaja))
