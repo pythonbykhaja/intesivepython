@@ -11,8 +11,13 @@ sum = 0
 for value in factors_list:
     if is_prime(value):
         sum += value
+print(f"sum of prime factors {sum}")
 
-
+# max prime factor
+for value in factors_list[::-1]:
+    if is_prime(value):
+        print(f"largest prime factor is {value}")
+        break
 
 
 

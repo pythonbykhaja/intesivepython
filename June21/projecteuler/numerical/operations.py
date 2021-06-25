@@ -1,7 +1,7 @@
 """
 This module performs some numerical operations
 """
-import utils
+from . import utils
 
 def factors(number):
     values = []

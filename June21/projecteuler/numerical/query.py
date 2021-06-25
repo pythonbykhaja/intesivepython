@@ -1,7 +1,7 @@
 """
 This module implements functions which are used to query the numbers
 """
-import utils
+from . import utils
 
 def is_prime(number):
     """
