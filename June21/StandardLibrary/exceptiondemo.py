@@ -8,12 +8,15 @@ if __name__ == "__main__":
             option = int(input("Enter the number of your choice to get gift: "))
             print(f"You have choosen {items[option]}")
         
-        except:
-            print("Wrong option entered try again")
+        except Exception as e:
+            print(f"Error occured See the following for error info")
+            print(f"Type of Error {type(e)}")
+            print(f"Error args {e.args}")
+            print(e)
 
         else:
             print("Thank god no errors")
-            
+
         finally:
             choice = input('Do you want to Continue Enter y for yes and n for no: ')
             if choice == 'n':
