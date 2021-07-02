@@ -1,0 +1,27 @@
+{
+	"buslist": [{
+			"source": "Hyderabad",
+			"destination": "Bangalore",
+			"type": "sleeper",
+			"org": "Morning Star",
+			"via": ["Kurnool", "Anantapur"]
+
+		},
+		{
+			"source": "Bangalore",
+			"destination": "Vijayawada",
+			"type": "seater",
+			"org": "Orange travels",
+			"via": ["Tirupati", "Nellore", "Ongole"]
+
+		},
+		{
+			"source": "Vijayawada",
+			"destination": "Vishakapatnam",
+			"type": "seater",
+			"org": "APSRTC",
+			"via": ["eluru", "Rajahmundry"]
+
+		}
+	]
+}
