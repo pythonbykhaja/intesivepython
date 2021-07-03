@@ -1,5 +1,7 @@
 import os
 from dataclasses import dataclass
+import json
+
 def get_empty_inventory():
     """
     This method returns an empty dictionary containing 
@@ -21,6 +23,14 @@ def is_inventory_available():
       True if the inventory file is found else returns false
     """
     return os.path.exists(inventory_file_path()) and os.path.isfile(inventory_file_path())
+
+def load_inventory_dict():
+    if is_inventory_available():
+        with open(inventory_file_path()) as inv_file:
+            return json.load(inv_file)
+    return get_empty_inventory()
+
+
 
 @dataclass
 class Inventory:
