@@ -11,6 +11,18 @@
             "name": "oneplus 9",
             "price": 90000.0,
             "quantity": 15
+        },
+        {
+            "id": 3,
+            "name": "ipad",
+            "price": 40000.0,
+            "quantity": 20
+        },
+        {
+            "id": 4,
+            "name": "samsung tab",
+            "price": 25000.0,
+            "quantity": 15
         }
     ]
 }

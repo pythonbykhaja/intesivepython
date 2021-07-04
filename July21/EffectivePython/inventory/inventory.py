@@ -50,6 +50,15 @@ class Inventory:
         inv['quantity'] = self.quantity
         return inv
 
+    def __str__(self) -> str:
+        return f"{self.id}, {self.name}, {self.price}, {self.quantity}"
+
+    @staticmethod
+    def header():
+        return f"id, name, price, quantity"
+
+
+
     @staticmethod
     def read_inventory_from_input():
         id = int(input('Enter the id: '))
