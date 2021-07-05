@@ -17,6 +17,26 @@ def inventory_file_path():
     """
     return 'data/inventory.json'
 
+def get_inventory_index(inventory_dict, id):
+    """
+    This method returns the index of the item in inventory dictionary
+    Returns:
+       index of the item if found
+
+    Raises:
+        KeyError if the id is not found
+    """
+    count = 0
+    for item in inventory_dict["items"]:
+        if item['id'] == id:
+            return count
+        count += 1
+    raise KeyError("Id not found")
+
+
+
+
+
 def is_inventory_available():
     """
     Returns:

@@ -5,6 +5,17 @@ import inventory
 import json
 import menu
 
+def update_sale_to_inventory(inventory_dict, id, sale_quanity):
+    try:
+        index = inventory.get_inventory_index(inventory_dict,id)
+        inventory_dict['items'][index]['quantity'] -= sale_quanity
+        write_to_inventory(inventory_dict)
+    except KeyError as ke:
+        print("Invalid Id entered during sale")
+
+
+
+
 def write_to_inventory(inventory_dict):
     with open(inventory.inventory_file_path(), 'w') as inv_file:
                 json.dump(inventory_dict,inv_file,indent=4)
