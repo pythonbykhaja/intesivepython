@@ -2,6 +2,7 @@ import datetime
 import sqlite3
 from sqlite3 import Error
 from dataclasses import dataclass
+from sqlite3.dbapi2 import Cursor
 
 @dataclass
 class Product:
@@ -36,6 +37,21 @@ class Product:
             cursor = connection.cursor()
             cursor.execute(insert_statement)
             connection.commit()
+
+    @staticmethod
+    def get_all_products():
+        select_query = "SELECT * from products"
+        products = list()
+        with create_connection(database_file()) as connection:
+            cursor = connection.cursor()
+            for row in cursor.execute(select_query):
+                product = Product(row[0],row[1], row[2], row[3])
+                products.append(product)
+        return products
+                
+
+
+
         
 
 @dataclass

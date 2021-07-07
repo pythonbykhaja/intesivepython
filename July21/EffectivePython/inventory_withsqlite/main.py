@@ -30,6 +30,7 @@ def initialize():
 
 if __name__ == '__main__':
     initialize()
+    products = models.Product.get_all_products()
     while True:
         print("Enter product information")
         product = models.Product.create_product_from_userinput()
