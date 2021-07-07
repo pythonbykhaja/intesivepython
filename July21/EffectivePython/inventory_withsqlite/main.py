@@ -1,8 +1,7 @@
 import sqlite3
 import models
 
-if __name__ == '__main__':
-    
+def initialize():
     sql_products_create_table = """
     CREATE TABLE IF NOT EXISTS products (
         id integer PRIMARY KEY,
@@ -25,6 +24,24 @@ if __name__ == '__main__':
     if connection is not None:
         models.create_table(connection, sql_products_create_table)
         models.create_table(connection, sql_sales_create_table)
+
+    connection.close()
+
+
+if __name__ == '__main__':
+    initialize()
+    while True:
+        print("Enter product information")
+        product = models.Product.create_product_from_userinput()
+        product.save()
+        choice = input('Enter n to stop and y to continue')
+        if choice == 'n':
+            break
+
+    
+    
+
+
         
 
     
