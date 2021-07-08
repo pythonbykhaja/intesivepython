@@ -14,6 +14,12 @@ class Product:
     price: float
     quantity: int
 
+    def __str__(self) -> str:
+        return f"{self.id}, {self.name}, {self.price}, {self.quantity}"
+
+    def header() -> str:
+        return "id, name, price, quantity"
+
     @staticmethod
     def create_product_from_userinput():
         """
@@ -31,11 +37,30 @@ class Product:
     def save(self):
         """
         This statement will insert the product into the database
+
+        Raises:
+          sqlite3.IntegrityError: When inserting a product with same id
         """
         insert_statement = f"INSERT into products (id, name, price, quantity)  VALUES({self.id}, '{self.name}', {self.price}, {self.quantity})"
         with create_connection(database_file()) as connection:
             cursor = connection.cursor()
             cursor.execute(insert_statement)
+            connection.commit()
+
+    def sell(self, quantity):
+        """
+        This method will reduce the quantity of the item sold from inventory
+        """
+        pass
+
+    def update(self):
+        """
+        This method will implement the update to the database
+        """
+        update_statement = f"UPDATE products SET name='{self.name}',price={self.price},quantity={self.quantity} WHERE id={self.id}"
+        with create_connection(database_file()) as connection:
+            cursor = connection.cursor()
+            cursor.execute(update_statement)
             connection.commit()
 
     @staticmethod
@@ -78,7 +103,6 @@ def create_connection(db_file) -> sqlite3.Connection:
     connection = None
     try:
         connection = sqlite3.connect(db_file)
-        print(sqlite3.version)
     except Error as e:
         print(e)
     return connection
