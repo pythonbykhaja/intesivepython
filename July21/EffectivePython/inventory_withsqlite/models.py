@@ -51,7 +51,11 @@ class Product:
         """
         This method will reduce the quantity of the item sold from inventory
         """
-        pass
+        update_statement = f"UPDATE products SET quantity={self.quantity-quantity} WHERE id={self.id}"
+        with create_connection(database_file()) as connection:
+            cursor = connection.cursor()
+            cursor.execute(update_statement)
+            connection.commit()
 
     def update(self):
         """
