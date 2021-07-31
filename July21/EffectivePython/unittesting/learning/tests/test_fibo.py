@@ -1,4 +1,4 @@
-from fibo import fibonacci
+from learning.fibo import fibonacci
 
 def test_fibo_zero_index():
     """

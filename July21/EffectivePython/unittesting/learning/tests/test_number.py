@@ -1,4 +1,4 @@
-from number import Number
+from learning.number import Number
 def test_iseven_positive():
     number_1 = Number()
     number_2 = Number(10)
