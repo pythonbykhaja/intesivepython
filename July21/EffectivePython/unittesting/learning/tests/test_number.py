@@ -12,6 +12,6 @@ def test_iseven_positive():
 
 def test_iseven_negative():
     number_1 = Number(-2)
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match='Number cannot be less than zero'):
         number_1.is_even()
 

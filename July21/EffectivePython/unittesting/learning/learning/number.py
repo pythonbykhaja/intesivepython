@@ -18,7 +18,7 @@ class Number:
           ValueError when number is less than zero
         """
         if self.__number < 0:
-            raise ValueError("Number cannot be less than zero")
+            raise ValueError("Number should be greater than zero")
         if self.__number == 0:
             return False
         return (self.__number%2 == 0)
