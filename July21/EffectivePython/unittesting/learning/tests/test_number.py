@@ -15,3 +15,14 @@ def test_iseven_negative():
     with pytest.raises(ValueError, match='Number should be greater than zero'):
         number_1.is_even()
 
+
+def test_factorial_basic():
+    number = Number(0)
+    assert number.factorial() == 1
+
+def test_factorial_exception():
+    number = Number(-5)
+    with pytest.raises(ValueError, match='Number cannot be less than zero'):
+        number.factorial()
+
+
