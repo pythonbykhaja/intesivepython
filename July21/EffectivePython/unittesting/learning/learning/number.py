@@ -13,7 +13,12 @@ class Number:
         This method will check if the number is even or not
 
         Returns: True if even false otherwise
+
+        Raises:
+          ValueError when number is less than zero
         """
+        if self.__number < 0:
+            raise ValueError("Number cannot be less than zero")
         if self.__number == 0:
             return False
         return (self.__number%2 == 0)
@@ -23,5 +28,10 @@ class Number:
         This method will calculate factorial
 
         Returns: factorial of a number 
+
+        Raises:
+          ValueError when number is less than zero
         """
+        if self.__number < 0:
+            raise ValueError("Number cannot be less than zero")
         return math.factorial(self.__number)
