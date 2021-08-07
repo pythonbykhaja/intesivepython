@@ -53,7 +53,8 @@ def update_product(products, ids):
     if id not in ids:
         print("Invalid Id entered")
     else:
-        selected_product: models.Product = [product for product in products if product.id == id][0]
+        selected_product: models.Product = list(filter(lambda product: product.id == id),products)[0]
+        #selected_product: models.Product = [product for product in products if product.id == id][0]
         result = accept_change_from_user('name', selected_product.name)
         is_updated = False
         if result:

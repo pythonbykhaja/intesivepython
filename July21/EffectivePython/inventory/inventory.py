@@ -33,10 +33,6 @@ def get_inventory_index(inventory_dict, id):
         count += 1
     raise KeyError("Id not found")
 
-
-
-
-
 def is_inventory_available():
     """
     Returns:
