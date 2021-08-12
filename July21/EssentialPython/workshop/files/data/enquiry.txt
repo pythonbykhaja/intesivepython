@@ -1,0 +1,2 @@
+khaja, 7897987234, python
+teja, 0809809, django
