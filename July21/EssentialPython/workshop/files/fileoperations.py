@@ -10,6 +10,15 @@ def read_and_display(filename):
     print(text)
     file_object.close() # close the file
 
+def read_partial_and_display(filename, characters = 10):
+    """This function reads files and displays the text as per the characters passed
+    """
+    file_object = open(file=filename)
+    text = file_object.read(characters)
+    print(text)
+    file_object.close()
+
 
 if __name__ == '__main__':
-    read_and_display('simple.txt')
+    #read_and_display('simple.txt')
+    read_partial_and_display('data.txt', 1000)
