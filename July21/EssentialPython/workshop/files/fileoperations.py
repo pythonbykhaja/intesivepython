@@ -5,18 +5,16 @@ def read_and_display(filename):
     Arguments:
        filename (str): path of the file
     """
-    file_object = open(file=filename) # open the file 
-    text = file_object.read() # read all content
-    print(text)
-    file_object.close() # close the file
+    with open(file=filename) as file_object:
+        text = file_object.read() # read all content
+        print(text)
 
 def read_partial_and_display(filename, characters = 10):
     """This function reads files and displays the text as per the characters passed
     """
-    file_object = open(file=filename)
-    text = file_object.read(characters)
-    print(text)
-    file_object.close()
+    with open(file=filename) as file_object:
+        text = file_object.read(characters)
+        print(text)    
 
 
 if __name__ == '__main__':
