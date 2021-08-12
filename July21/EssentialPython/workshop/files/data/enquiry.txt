@@ -1,2 +1,3 @@
 khaja, 7897987234, python
 teja, 0809809, django
+anjelina, 90809890, datascience

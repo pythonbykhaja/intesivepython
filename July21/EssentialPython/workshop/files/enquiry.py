@@ -2,11 +2,27 @@
 """
 enquiry_data_file = 'data/enquiry.txt'
 
+
 def main():
     """
     This function will be used for interacting or entering data
     """
-    ask_user_input()
+    while True:
+        message = """
+    1. Add Enquiry information
+    2. show all Enquires
+    3. quit
+
+    Enter your choice? 
+    """
+        choice = input(message)
+        if choice == '1':
+            ask_user_input()
+        elif choice == '2':
+            print('Code under progress')
+        else:
+            break
+
 
 def ask_user_input():
     name = input('Enter your name: ')
