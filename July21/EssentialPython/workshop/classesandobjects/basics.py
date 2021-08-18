@@ -4,7 +4,7 @@ class Student:
     
     """
 
-    def __init__(self, name, email) -> None:
+    def __init__(self, name='python', email='python@gmail.com') -> None:
         self.name = name
         self.email = email
 
