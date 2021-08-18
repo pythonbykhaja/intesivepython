@@ -1,7 +1,11 @@
 from basics import Student
+from numbers import Number, AdvancedNumber
 
 if __name__ == '__main__':
-    s1 = Student('khaja', 'khaja.python@gmail.com')
-    print(s1.name)
-    s2 = Student()
-    print(s2.name)
+    number = Number(19)
+    if number.is_prime():
+        print(f"{number.number} is prime")
+
+    number2 = AdvancedNumber(23)
+    if number2.is_prime():
+        print(f"{number2.number} is prime")
