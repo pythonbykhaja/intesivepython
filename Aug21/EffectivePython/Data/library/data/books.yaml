@@ -1,0 +1,8 @@
+books:
+- author: spenser
+  title: Who moved my cheese
+- author: David Rock
+  title: Your brain at work
+- author: Robert Kiyosaki
+  title: Rich Dad Poor Dad
+name: qtlibrary
