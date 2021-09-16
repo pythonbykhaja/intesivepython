@@ -54,6 +54,7 @@ def search_book_by_title(title):
     finally:
         connection.close()
 
+
 def update_book(id, new_title, new_author):
     """
     update the book with new_title and new_author
