@@ -1,10 +1,8 @@
 from datetime import datetime
+from models.baseinventory import BaseInventoryModel
 import csv
 
-class Product:
-
-    file_name = 'data/products.csv'
-
+class Product(BaseInventoryModel):
     """
     This class represents the product
     """
@@ -18,14 +16,12 @@ class Product:
         :param category: The category of the product
         :param mrp: The maximum retail price of the product
         """
+        super().__init__(file_name='data/products.csv')
         self.id = id
         self.name = name
         self.description = description
         self.category = category
         self.mrp = mrp
-        self.created_at = datetime.now()
-        # todo: fix the updated_at to be changed when attributes are changed
-        self.upated_at = datetime.now()
 
     def __str__(self):
         """
