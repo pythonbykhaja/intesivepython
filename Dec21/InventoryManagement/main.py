@@ -1,4 +1,5 @@
 from inventory import inventory
+from models.products import Product
 
 
 def get_input_from_user(field_name):
@@ -9,7 +10,7 @@ def get_input_from_user(field_name):
     return result
 
 if __name__ == '__main__':
-    
+
     id = get_input_from_user('id')
     name = get_input_from_user('name')
     description = get_input_from_user('description')
