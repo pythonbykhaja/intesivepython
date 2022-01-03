@@ -1,6 +1,10 @@
 from datetime import datetime
+import csv
 
 class Product:
+
+    file_name = 'data/products.csv'
+
     """
     This class represents the product
     """
@@ -24,5 +28,16 @@ class Product:
         self.upated_at = datetime.now()
 
     def __str__(self):
-        return(f"{self.id}, {self.name}, {self.description}, {self.category}, {self.mrp},  {self.created_at}")
+        """
+        This is string representation of object
+        T"""
+        return(f"{self.id}, {self.name}, {self.description}, {self.category}, {self.mrp}, {self.created_at}")
+    
+    def save(self):
+        """
+        This method will save the Current Object to the file
+        """
+        with open(self.file_name, 'w') as file:
+            writer = csv.writer(file, delimiter = ',')
+            writer.writerow([self.id, self.name, self.description, self.category, self.mrp,self.created_at ])
 

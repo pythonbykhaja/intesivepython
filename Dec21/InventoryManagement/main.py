@@ -2,6 +2,9 @@ from inventory import inventory
 
 
 def get_input_from_user(field_name):
+    """
+    This is the reusable method to collect input from user
+    """
     result = input(f"Enter {field_name}: ")
     return result
 
