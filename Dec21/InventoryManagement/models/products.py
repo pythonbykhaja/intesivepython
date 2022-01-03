@@ -37,7 +37,7 @@ class Product:
         """
         This method will save the Current Object to the file
         """
-        with open(self.file_name, 'w') as file:
+        with open(self.file_name, 'a') as file:
             writer = csv.writer(file, delimiter = ',')
             writer.writerow([self.id, self.name, self.description, self.category, self.mrp,self.created_at ])
 
