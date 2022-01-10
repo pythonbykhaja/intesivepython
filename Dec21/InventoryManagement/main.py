@@ -11,12 +11,14 @@ def get_input_from_user(field_name):
     return result
 
 if __name__ == '__main__':
-    s1 = Stock(2,11)
-    s1.save()
+    #s1 = Stock(2,11)
+    #s1.save()
 
-    p1 = Product(1, 'test', 'test', 'test', 100.45)
-    p1.save()
-    #print(s1)
+    #p1 = Product(1, 'test', 'test', 'test', 100.45)
+    #p1.save()
+    items = Product.items()
+    for item in items:
+        print(item)
 
     # id = get_input_from_user('id')
     # name = get_input_from_user('name')

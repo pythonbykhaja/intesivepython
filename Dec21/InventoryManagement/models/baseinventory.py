@@ -2,6 +2,8 @@ from datetime import datetime
 import os
 import csv
 
+import inventory
+
 
 class BaseInventoryModel:
     """
@@ -35,6 +37,24 @@ class BaseInventoryModel:
             if not is_csv_file_existing:
                 writer.writeheader()
             writer.writerow(field_dict)
+
+    @classmethod
+    def items(cls):
+        """
+        Returns all the objects by reading the records in the csv file
+        """
+        if not os.path.exists(cls._file_name):
+            return []
+        with open(cls._file_name, 'r') as csv_file:
+            reader = csv.DictReader(csv_file)
+            #inventory_items = []
+            #for row in reader:
+            #    inventory_item = cls(**row)
+            #    inventory_items.append(inventory_item)
+            inventory_items = [cls(**row) for row in reader]
+        return inventory_items
+
+
 
 
 

@@ -29,18 +29,7 @@ class Product(BaseInventoryModel):
         """
         This is string representation of object
         T"""
-        return(f"{self.id}, {self.name}, {self.description}, {self.category}, {self.mrp}, {self.created_at}")
+        return(f"{self.id}, {self.name}, {self.description}, {self.category}, {self.mrp}, {self.created_at}, {self.updated_at}")
     
 
-    @classmethod
-    def ids(cls):
-        """
-        This method will read all the existing ids from the csv file 
-        """
-        item_ids = []
-        with open(cls.file_name, 'r') as file:
-            reader = csv.reader(file, delimiter = ',')
-            for row in reader:
-                if len(row) > 0:
-                    item_ids.append(row[0])
-        return item_ids
+    
