@@ -3,10 +3,12 @@ from models.baseinventory import BaseInventoryModel
 import csv
 
 class Product(BaseInventoryModel):
+    _file_name = 'data/products.csv'
+
     """
     This class represents the product
     """
-    def __init__(self, id, name, description,category,mrp):
+    def __init__(self, id, name, description,category,mrp,created_at=None, updated_at=None):
         """
         Initializer for Product
 
@@ -16,7 +18,7 @@ class Product(BaseInventoryModel):
         :param category: The category of the product
         :param mrp: The maximum retail price of the product
         """
-        super().__init__(file_name='data/products.csv')
+        super().__init__(created_at, updated_at)
         self.id = id
         self.name = name
         self.description = description
@@ -29,13 +31,6 @@ class Product(BaseInventoryModel):
         T"""
         return(f"{self.id}, {self.name}, {self.description}, {self.category}, {self.mrp}, {self.created_at}")
     
-    def save(self):
-        """
-        This method will save the Current Object to the file
-        """
-        with open(self.file_name, 'a') as file:
-            writer = csv.writer(file, delimiter = ',')
-            writer.writerow([self.id, self.name, self.description, self.category, self.mrp,self.created_at ])
 
     @classmethod
     def ids(cls):

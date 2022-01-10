@@ -1,19 +1,18 @@
 from models.baseinventory import BaseInventoryModel
 
 class Stock(BaseInventoryModel):
+
+    _file_name='data/stocks.csv'
+
     """
     This class represents the Stock of the items in the Store
     """
-    def __init__(self, id, quantity) -> None:
-        super().__init__(file_name='data/stocks.csv')
+    def __init__(self, id, quantity, created_at=None, updated_at=None) -> None:
+        super().__init__(created_at, updated_at)
         self.id = id
         self.quantity = quantity
+
     
-    def save(self):
-        """
-        This method will save the Stock record
-        """
-        pass
 
     def update(self, new_quantity):
         """
