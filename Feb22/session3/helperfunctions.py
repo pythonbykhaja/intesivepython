@@ -17,4 +17,5 @@ if __name__ == "__main__":
     qs = 'name=python&topic=effective&batch=1'
     qs_dict = parse_qs(qs)
     print(f"{get_first_value(qs_dict, key='name')} {get_first_value(qs_dict, key='topic')}")
+    
 
